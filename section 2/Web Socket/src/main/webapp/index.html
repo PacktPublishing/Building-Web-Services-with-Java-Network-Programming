@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chat - Websockets</title>
+<script src="js/app.js"></script>
+</head>
+<style>
+textarea#message {
+	width: 485px;
+	height: 50px;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	resize: none;
+}
+
+.scrolling-messages {
+	height: 400px;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: auto;
+	border-bottom: 1px solid #cccccc;
+}
+
+.message-section {
+	height: 95px;
+	width: 100%;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	max-height: 570px;
+	border: 3px solid #cccccc;
+}
+
+.message-label {
+	height: 20px;
+	width: 100%;
+	font-size: 12px;
+	font-family: Tahoma, sans-serif;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+p {
+	width: 485px;
+	word-wrap: break-word;
+}
+</style>
+<body onload="init();">
+	<div id="main" class="main" style="display: none">
+		<div id="scrolling-messages" class="scrolling-messages"></div>
+		<div class="message-label">
+			<span>Enter message:</span>
+		</div>
+		<div class="message-section">
+			<div>
+				<textarea id="message"></textarea>
+			</div>
+			<div style="float: right">
+				<input type="button" value="submit" onclick="sendMessage();"
+					class="button" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>
